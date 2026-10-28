@@ -87,62 +87,70 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
         ),
         actions: [
           // Fire streak chip (Olimp ruby)
-          Container(
-            margin: const EdgeInsets.symmetric(vertical: 11),
-            padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 2),
-            decoration: BoxDecoration(
-              color: AppTheme.primary.withAlpha(25),
-              borderRadius: BorderRadius.circular(10),
-              border: Border.all(color: AppTheme.primary.withAlpha(90)),
-            ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                const Icon(
-                  Icons.local_fire_department_rounded,
-                  color: AppTheme.primary,
-                  size: 15,
-                ),
-                const SizedBox(width: 3),
-                Text(
-                  '${provider.streakDays}',
-                  style: GoogleFonts.outfit(
-                    fontSize: 11,
-                    fontWeight: FontWeight.bold,
+          InkWell(
+            onTap: () => setState(() => _currentIndex = 1),
+            borderRadius: BorderRadius.circular(10),
+            child: Container(
+              margin: const EdgeInsets.symmetric(vertical: 11),
+              padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 2),
+              decoration: BoxDecoration(
+                color: AppTheme.primary.withAlpha(25),
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(color: AppTheme.primary.withAlpha(90)),
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const Icon(
+                    Icons.local_fire_department_rounded,
                     color: AppTheme.primary,
+                    size: 15,
                   ),
-                ),
-              ],
+                  const SizedBox(width: 3),
+                  Text(
+                    '${provider.streakDays}',
+                    style: GoogleFonts.outfit(
+                      fontSize: 11,
+                      fontWeight: FontWeight.bold,
+                      color: AppTheme.primary,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
           const SizedBox(width: 6),
 
           // Coins chip (Olimp gold)
-          Container(
-            margin: const EdgeInsets.symmetric(vertical: 11),
-            padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 2),
-            decoration: BoxDecoration(
-              color: AppTheme.secondary.withAlpha(25),
-              borderRadius: BorderRadius.circular(10),
-              border: Border.all(color: AppTheme.secondary.withAlpha(90)),
-            ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  currentRank.badge,
-                  style: const TextStyle(fontSize: 12),
-                ),
-                const SizedBox(width: 3),
-                Text(
-                  '${provider.coins}',
-                  style: GoogleFonts.outfit(
-                    fontSize: 11,
-                    fontWeight: FontWeight.bold,
-                    color: AppTheme.secondary,
+          InkWell(
+            onTap: () => setState(() => _currentIndex = 2),
+            borderRadius: BorderRadius.circular(10),
+            child: Container(
+              margin: const EdgeInsets.symmetric(vertical: 11),
+              padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 2),
+              decoration: BoxDecoration(
+                color: AppTheme.secondary.withAlpha(25),
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(color: AppTheme.secondary.withAlpha(90)),
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    currentRank.badge,
+                    style: const TextStyle(fontSize: 12),
                   ),
-                ),
-              ],
+                  const SizedBox(width: 3),
+                  Text(
+                    '${provider.coins}',
+                    style: GoogleFonts.outfit(
+                      fontSize: 11,
+                      fontWeight: FontWeight.bold,
+                      color: AppTheme.secondary,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
           const SizedBox(width: 10),
