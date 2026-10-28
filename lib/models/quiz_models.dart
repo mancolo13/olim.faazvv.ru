@@ -294,7 +294,7 @@ class QuizDataBundle {
     final appInfo = json['app_info'] as Map<String, dynamic>? ?? {};
 
     return QuizDataBundle(
-      appName: appInfo['name'] as String? ?? 'Олимп Матч-Центр',
+      appName: appInfo['name'] as String? ?? 'Олим Матч-Центр',
       appTheme: appInfo['theme'] as String? ?? 'РПЛ Квиз',
       language: appInfo['language'] as String? ?? 'ru',
       ranks: (json['ranks'] as List<dynamic>?)
